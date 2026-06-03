@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nathan Holmes | Web Designer</title>
+    <title>NH | Web Design</title>
     
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
     
+    <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <style>
@@ -86,40 +91,19 @@
         /* --- Logo & Title Section --- */
         .branding-section {
             text-align: center;
-            padding: 3rem 1rem;
+            padding: 4rem 1rem;
             background: #fff;
         }
 
-        .logo-placeholder {
-            width: 80px;
-            height: 80px;
-            border: 2px solid #ccc;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin: 0 auto 1rem;
-            font-size: 2rem;
-            font-weight: bold;
-            font-family: 'Open Sans', sans-serif;
-        }
-        
-        .logo-placeholder span:first-child { color: var(--text-dark); }
-        .logo-placeholder span:last-child { color: var(--primary-orange); }
-
-        .branding-section h1 {
-            font-size: 1.8rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .branding-section p {
-            color: var(--text-light);
-            font-size: 1.1rem;
+        .custom-logo {
+            display: block;
+            margin: 0 auto;
+            max-height: 120px;
+            width: auto;
         }
 
         /* --- Hero Section --- */
         .hero {
-            /* Need to replace */
             background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80') center/cover no-repeat;
             color: #fff;
             text-align: center;
@@ -404,6 +388,7 @@
 </head>
 <body>
 
+    <!-- Header Navigation -->
     <header>
         <ul class="nav-links">
             <li><a href="#" class="active">Homepage</a></li>
@@ -413,24 +398,23 @@
             <li><a href="#contact">Contact</a></li>
         </ul>
         <div class="contact-info">
-            <span>info@nathanholmes.uk</span>
+            <span>info@nhwebdesign.co.uk</span>
             <span>07939233017</span>
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </div>
     </header>
 
+    <!-- Branding & Logo -->
     <section class="branding-section">
-        <div class="logo-placeholder">
-            <span>n</span><span>h</span>
-        </div>
-        <h1>Nathan Holmes</h1>
-        <p>Web Designer - Halifax, West Yorkshire</p>
+        <img src="images/logo.png" alt="Nathan Holmes Web Design Logo" class="custom-logo">
     </section>
 
+    <!-- Hero Section -->
     <section class="hero">
         <h2>I create bespoke websites designed and developed specifically for you, your business and your customers.</h2>
     </section>
 
+    <!-- Services Section -->
     <section id="services" class="services">
         <div class="service-card">
             <i class="fa-solid fa-desktop"></i>
@@ -449,6 +433,7 @@
         </div>
     </section>
 
+    <!-- About Section -->
     <section id="about" class="about">
         <i class="fa-regular fa-user"></i>
         <h2>Nathan Holmes</h2>
@@ -463,6 +448,7 @@
         <a href="#contact" class="btn-outline">Contact me...</a>
     </section>
 
+    <!-- Hosting Features Section -->
     <section class="hosting-features">
         <div class="feature-flex">
             <i class="fa-regular fa-lightbulb"></i>
@@ -480,8 +466,10 @@
         </div>
     </section>
 
+    <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="pricing-grid">
+            <!-- Beginner -->
             <div class="pricing-card">
                 <i class="fa-regular fa-circle-xmark"></i>
                 <h3>Beginner Package</h3>
@@ -505,6 +493,7 @@
                 <div class="price">£300 + Support</div>
             </div>
 
+            <!-- Intermediate -->
             <div class="pricing-card">
                 <i class="fa-regular fa-circle-xmark"></i>
                 <h3>Intermediate Package</h3>
@@ -532,6 +521,7 @@
                 <div class="price">£600 + Support</div>
             </div>
 
+            <!-- Advanced -->
             <div class="pricing-card">
                 <i class="fa-regular fa-circle-xmark"></i>
                 <h3>Advanced Package</h3>
@@ -563,6 +553,7 @@
             </div>
         </div>
 
+        <!-- Support Packages -->
         <div class="support-pricing">
             <div class="support-tier">
                 <h4>Basic Support:</h4>
@@ -582,18 +573,14 @@
         </div>
     </section>
 
+    <!-- Footer -->
     <footer id="contact">
-        <p>info@nathanholmes.uk</p>
+        <p>info@nhwebdesign.co.uk</p>
         <p>07939233017</p>
         <div class="socials" style="margin: 1.5rem 0;">
             <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </div>
-        <p>© 2026 - NH Web Design</p>
+        <p>©2026 - Website created by Nathan Holmes</p>
     </footer>
-
-    <a href="#contact" class="fab">
-        <i class="fa-solid fa-comment-dots"></i> Let's Chat!
-    </a>
-
 </body>
 </html>
