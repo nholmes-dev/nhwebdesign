@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nathan Holmes | Web Designer</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        :root {
+            --primary-orange: #f26522;
+            --text-dark: #333333;
+            --text-light: #666666;
+            --bg-gray: #5c5c5c;
+            --bg-darker-gray: #3b3b3b;
+            --bg-light: #fafafa;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Open Sans', sans-serif;
+            color: var(--text-dark);
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5 {
+            font-family: 'Lora', serif;
+            font-weight: 400;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: var(--primary-orange);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.5rem 5%;
+            background: #fff;
+            border-bottom: 1px solid #eee;
+            flex-wrap: wrap;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+
+        .nav-links li a {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: var(--text-light);
+        }
+
+        .nav-links li a.active {
+            color: var(--primary-orange);
+        }
+
+        .contact-info {
+            display: flex;
+            gap: 1.5rem;
+            align-items: center;
+            font-size: 0.9rem;
+            color: var(--text-light);
+        }
+
+        /* --- Logo & Title Section --- */
+        .branding-section {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: #fff;
+        }
+
+        .logo-placeholder {
+            width: 80px;
+            height: 80px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 auto 1rem;
+            font-size: 2rem;
+            font-weight: bold;
+            font-family: 'Open Sans', sans-serif;
+        }
+        
+        .logo-placeholder span:first-child { color: var(--text-dark); }
+        .logo-placeholder span:last-child { color: var(--primary-orange); }
+
+        .branding-section h1 {
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .branding-section p {
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+
+        /* --- Hero Section --- */
+        .hero {
+            /* Replace the URL below with your actual dark desk background image */
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=2072&q=80') center/cover no-repeat;
+            color: #fff;
+            text-align: center;
+            padding: 8rem 2rem;
+        }
+
+        .hero h2 {
+            font-size: 2.8rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.4;
+        }
+
+        /* --- Services Section --- */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 3rem;
+            padding: 5rem 5%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .service-card i {
+            font-size: 3rem;
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .service-card h3 {
+            color: var(--primary-orange);
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        /* --- About Section --- */
+        .about {
+            background-color: var(--bg-gray);
+            color: #fff;
+            text-align: center;
+            padding: 5rem 10%;
+        }
+
+        .about i {
+            font-size: 3rem;
+            color: var(--primary-orange);
+            margin-bottom: 1rem;
+        }
+
+        .about h2 {
+            font-size: 2rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .about .subtitle {
+            color: var(--primary-orange);
+            margin-bottom: 2rem;
+            font-style: italic;
+        }
+
+        .about p {
+            max-width: 800px;
+            margin: 0 auto 1.5rem;
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+
+        .about .orange-text {
+            color: var(--primary-orange);
+            margin: 3rem 0 2rem;
+        }
+
+        .btn-outline {
+            display: inline-block;
+            padding: 0.8rem 2rem;
+            border: 1px solid #fff;
+            color: #fff;
+            background: transparent;
+            transition: all 0.3s ease;
+        }
+
+        .btn-outline:hover {
+            background: #fff;
+            color: var(--bg-gray);
+        }
+
+        /* --- Hosting Features --- */
+        .hosting-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+            gap: 4rem;
+            background-color: var(--bg-darker-gray);
+            color: #fff;
+            padding: 5rem 10%;
+        }
+
+        .feature-flex {
+            display: flex;
+            gap: 1.5rem;
+            align-items: flex-start;
+        }
+
+        .feature-flex i {
+            font-size: 2.5rem;
+            color: var(--primary-orange);
+        }
+
+        .feature-flex h3 {
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-flex p {
+            color: #ccc;
+            font-size: 0.95rem;
+        }
+
+        /* --- Pricing Section --- */
+        .pricing {
+            padding: 5rem 5%;
+            background: #fff;
+            text-align: center;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+
+        .pricing-card {
+            padding: 2rem;
+            border-bottom: 2px solid transparent;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .pricing-card i {
+            font-size: 3rem;
+            color: var(--primary-orange);
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card h3 {
+            font-size: 1.2rem;
+            font-family: 'Open Sans', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card .highlight {
+            color: var(--primary-orange);
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin-bottom: 2rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .pricing-card ul li {
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card .target {
+            color: var(--primary-orange);
+            font-weight: bold;
+            margin-bottom: 1rem;
+            display: block;
+        }
+
+        .pricing-card .price {
+            font-weight: bold;
+            font-size: 1.1rem;
+            border-top: 1px solid #eee;
+            padding-top: 1rem;
+        }
+
+        /* Support Pricing */
+        .support-pricing {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .support-tier {
+            margin-bottom: 2rem;
+        }
+
+        .support-tier h4 {
+            color: var(--primary-orange);
+            font-family: 'Open Sans', sans-serif;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-tier p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .support-tier .price {
+            font-weight: bold;
+        }
+
+        .custom-note {
+            font-weight: bold;
+            margin: 3rem 0;
+            font-size: 0.95rem;
+        }
+
+        /* --- Footer --- */
+        footer {
+            text-align: center;
+            padding: 3rem 5%;
+            background: #fff;
+            border-top: 1px solid #eee;
+        }
+
+        footer p {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+
+        footer .socials i {
+            font-size: 1.5rem;
+            color: var(--text-dark);
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #3b3b3b;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 30px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: background 0.3s;
+            z-index: 1000;
+        }
+
+        .fab:hover {
+            background-color: #222;
+            color: #fff;
+        }
+
+        /* Mobile Adjustments */
+        @media (max-width: 768px) {
+            header {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .hero h2 {
+                font-size: 2rem;
+            }
+            .hosting-features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <ul class="nav-links">
+            <li><a href="#" class="active">Homepage</a></li>
+            <li><a href="#services">Web Design</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#about">Why me?</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="contact-info">
+            <span>info@nathanholmes.uk</span>
+            <span>07587830558</span>
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+    </header>
+
+    <section class="branding-section">
+        <div class="logo-placeholder">
+            <span>n</span><span>h</span>
+        </div>
+        <h1>Nathan Holmes</h1>
+        <p>Web Designer - Halifax, West Yorkshire</p>
+    </section>
+
+    <section class="hero">
+        <h2>I create bespoke websites designed and developed specifically for you, your business and your customers.</h2>
+    </section>
+
+    <section id="services" class="services">
+        <div class="service-card">
+            <i class="fa-solid fa-desktop"></i>
+            <h3>Website Design</h3>
+            <p><strong>No templates here.</strong> I design and develop bespoke websites that look and work exactly how you and your customers want them to. Whether you're looking for something simple or have big out-of-the-box ideas, <strong>I can help to deliver the perfect website for your business.</strong></p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-layer-group"></i>
+            <h3>Graphic Design</h3>
+            <p><strong>I create personalised website designs that makes your website stand out from the crowd.</strong> If you are a new business starting up, then my beginner package would suit your needs. Including all the basics you need to get started including a beautiful designed logo.</p>
+        </div>
+        <div class="service-card">
+            <i class="fa-solid fa-cubes"></i>
+            <h3>Branding</h3>
+            <p>Do you want the quality of your products and services to be reflected in your brand? I have experience in branding, creating amazing logo designs & producing brand packages, from identity guidelines to corporate stationery. <strong>Your website would match the business you're in.</strong></p>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <i class="fa-regular fa-user"></i>
+        <h2>Nathan Holmes</h2>
+        <p class="subtitle">Web Designer</p>
+        
+        <p>I am <strong>Nathan Holmes</strong>, a freelance web designer from <strong>Halifax, West Yorkshire</strong>. I have a real passion for Design, Art, Business and People. I have worked with all kinds of clients from small to large. I find a way to suit everybody's needs, whether you are a budding startup or an established company, differentiation in today's competitive software marketplace demands excellence in design.</p>
+        
+        <p>As a trusted adviser I work with multiple partners to make software design that is usable, enjoyable and memorable. I prioritise a research-based approach to ensure each design is appropriately targeted to each client's larger brand strategy.</p>
+        
+        <p class="orange-text">Please, feel free to get in touch and contact me, I'm sure that I can help you out.</p>
+        
+        <a href="#contact" class="btn-outline">Contact me...</a>
+    </section>
+
+    <section class="hosting-features">
+        <div class="feature-flex">
+            <i class="fa-regular fa-lightbulb"></i>
+            <div>
+                <h3>Reliable Hosting</h3>
+                <p>I offer reliable website and email hosting with a 99.99% uptime SLA agreement for reasonable prices. Should your website or email stop working, you can rely on me to resolve any issues as quickly and as efficiently as possible, even when I'm on holiday!</p>
+            </div>
+        </div>
+        <div class="feature-flex">
+            <i class="fa-solid fa-phone-volume"></i>
+            <div>
+                <h3>Lifetime Support</h3>
+                <p>With all of my clients, I offer reliable, on-going support. The majority of my work comes from repeat business and recommendations, and I strive to maintain a strong working relationship with my customers - some of whom I have worked with for years.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="pricing-grid">
+            <div class="pricing-card">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <h3>Beginner Package</h3>
+                <span class="highlight">What is included?</span>
+                <ul>
+                    <li>Bespoke Website Design</li>
+                    <li>Custom Domain Name</li>
+                    <li>1x Custom Email</li>
+                    <li>Complete & Reliable Hosting</li>
+                    <li>Up to <strong>3</strong> Pages</li>
+                    <li>Search Engine Optimisation (SEO)</li>
+                    <li>Responsive Mobile Site</li>
+                    <li>Social Media Buttons</li>
+                    <li>Contact Form</li>
+                    <li>Favicon</li>
+                    <li><br>Optional Support</li>
+                    <li>Reliable Hosting</li>
+                    <li>No Ads</li>
+                </ul>
+                <span class="target">Aimed at individuals</span>
+                <div class="price">£300 + Support</div>
+            </div>
+
+            <div class="pricing-card">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <h3>Intermediate Package</h3>
+                <span class="highlight">What is included?</span>
+                <ul>
+                    <li>Graphic Design</li>
+                    <li>Bespoke Website Design</li>
+                    <li>Custom Domain Name</li>
+                    <li>1x Custom Email</li>
+                    <li>Complete & Reliable Hosting</li>
+                    <li>Up to <strong>10</strong> Pages</li>
+                    <li>Search Engine Optimisation (SEO)</li>
+                    <li>Content Management System (CMS)</li>
+                    <li>Responsive Mobile Site</li>
+                    <li>Social Media Buttons</li>
+                    <li>Social Media Pages</li>
+                    <li>Contact Form</li>
+                    <li>Favicon</li>
+                    <li>Wide range of custom apps</li>
+                    <li><br>Optional Support</li>
+                    <li>Reliable Hosting</li>
+                    <li>No Ads</li>
+                </ul>
+                <span class="target">Aimed at small businesses</span>
+                <div class="price">£600 + Support</div>
+            </div>
+
+            <div class="pricing-card">
+                <i class="fa-regular fa-circle-xmark"></i>
+                <h3>Advanced Package</h3>
+                <span class="highlight">What is included?</span>
+                <ul>
+                    <li>Branding</li>
+                    <li>Graphic Design</li>
+                    <li>Bespoke Website Design</li>
+                    <li>Custom Domain Name</li>
+                    <li>1x Custom Email</li>
+                    <li>Complete & Reliable Hosting</li>
+                    <li><strong>Unlimited</strong> Pages</li>
+                    <li>Customised Logo</li>
+                    <li>Search Engine Optimisation (SEO)</li>
+                    <li>Content Management System (CMS)</li>
+                    <li>Responsive Mobile Site</li>
+                    <li>Social Media Buttons</li>
+                    <li>Social Media Pages</li>
+                    <li>Contact Form</li>
+                    <li>Favicon</li>
+                    <li>Wide range of custom apps</li>
+                    <li>Google Analytics</li>
+                    <li><br>Optional Support</li>
+                    <li>Reliable Hosting</li>
+                    <li>No Ads</li>
+                </ul>
+                <span class="target">Aimed at medium / large businesses</span>
+                <div class="price">£1200 + Support</div>
+            </div>
+        </div>
+
+        <div class="support-pricing">
+            <div class="support-tier">
+                <h4>Basic Support:</h4>
+                <p>A support that covers the hosting of the domain and website. This also covers quick changes and amendments made to the website.</p>
+                <div class="price">£20 Monthly</div>
+            </div>
+            
+            <div class="support-tier">
+                <h4>Premium Support:</h4>
+                <p>24/7 website support that covers hosting of the domain and website. This also covers unlimited changes, amendments, and new designs.</p>
+                <div class="price">£80 Monthly</div>
+            </div>
+
+            <p class="custom-note">* All Packages can be customised, contact me and we can arrange a bespoke package that suits your needs.<br><br>*All packages come with 1 month Premium Support</p>
+            
+            <a href="#contact" class="btn-outline" style="background: var(--bg-darker-gray); border-color: var(--bg-darker-gray); margin-top: 1rem;">Contact</a>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <p>info@nathanholmes.uk</p>
+        <p>07587830558</p>
+        <div class="socials" style="margin: 1.5rem 0;">
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
+        </div>
+        <p>2026 - Website created by Nathan Holmes ©</p>
+    </footer>
+
+    <a href="#contact" class="fab">
+        <i class="fa-solid fa-comment-dots"></i> Let's Chat!
+    </a>
+
+</body>
+</html>
