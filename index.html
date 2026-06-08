@@ -480,8 +480,11 @@
         <p class="orange-text">Please, feel free to get in touch and contact me, I'm sure that I can help you out.</p>
         
 <section id="contact-form" style="padding: 5rem 5%; background: #f9f9f9; text-align: center;">
-    <h2 style="margin-bottom: 2rem;">Get In Touch</h2>
-    <form action="https://formspree.io/f/xnjydkzd" method="POST" style="max-width: 600px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+    <!-- Changed color to black (default is black, added explicit color: black for clarity) -->
+    <h2 style="margin-bottom: 2rem; color: black;">Get In Touch</h2>
+    
+    <!-- Changed max-width to 100% to stretch the form -->
+    <form action="https://formspree.io/f/xnjydkzd" method="POST" style="max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
         <input type="text" name="name" placeholder="Your Name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;">
         <input type="email" name="email" placeholder="Your Email" required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;">
         <textarea name="message" placeholder="How can I help you?" rows="5" required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
@@ -576,14 +579,26 @@
                 <div class="price">£1500+</div>
             </div>
         </div>
+
+                <!-- Support Packages -->
+
+            <div class="support-tier">
+                <h4>Monthly Care Package:</h4>
+<p>Managed Hosting: Continuous maintenance of your Cloudflare Pages deployment to ensure the site stays online.</p> 
+<p>Security Monitoring: Regular security checks and SSL certificate management to ensure the site remains protected.</p>  
+<p>Automated Backups: Routine off-site backups of your site's code and assets to prevent data loss.</p>  
+<p>Performance Optimization: Ongoing monitoring of site speed to ensure the best possible experience for visitors.</p> 
+<p>Updates: Managing SSL certificate renewals and minor technical patches.</p> 
+<p>Small Content Edits: An allowance of 1 hour per month for minor text or image updates (e.g., changing a phone number, updating testimonials, or swapping a hero image).</p> 
+<p>Priority Support: Guaranteed response within 48 hours for any technical queries or support needs.</p> 
+                <div class="price">£40 Monthly</div>
+        </div>
     </section>
 
     <!-- Footer -->
     <footer id="contact">
         <p>info@nhwebdesign.co.uk</p>
         <p>07939233017</p>
-        <div class="socials" style="margin: 1.5rem 0;">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
         </div>
         <p>©2026 - Website created by Nathan Holmes</p>
     </footer>
