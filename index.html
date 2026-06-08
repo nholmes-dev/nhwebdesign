@@ -53,23 +53,30 @@
             color: var(--primary-orange);
         }
 
-        .logo-container {
+        /* Add this to your style block to ensure all section text is centered */
+section h2, section p, .pricing-card {
+    text-align: center;
+}
+        
+.logo-container {
     display: flex;
-    justify-content: center;
+    justify-content: center; /* Keeps everything centered */
     align-items: center;
-    gap: 20px; /* Space between logo and buttons */
+    position: relative; /* Allows buttons to be positioned independently */
     padding: 1rem;
 }
 
 .custom-logo {
-    max-height: 120px; /* Adjust size as needed */
+    max-height: 120px;
     width: auto;
 }
 
 .contact-quick-links {
     display: flex;
-    flex-direction: row; /* This changes the layout from vertical to horizontal */
-    gap: 15px; /* Adds space between the two buttons */
+    flex-direction: row;
+    gap: 15px;
+    position: absolute; /* Pulls buttons out of the alignment flow */
+    right: 5%; /* Aligns buttons to the right edge */
 }
 
 .quick-link-btn {
