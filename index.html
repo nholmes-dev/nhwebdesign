@@ -53,6 +53,51 @@
             color: var(--primary-orange);
         }
 
+        /* Add this to your style block to ensure all section text is centered */
+section h2, section p, .pricing-card {
+    text-align: center;
+}
+        
+.logo-container {
+    display: flex;
+    justify-content: center; /* Keeps everything centered */
+    align-items: center;
+    position: relative; /* Allows buttons to be positioned independently */
+    padding: 1rem;
+}
+
+.custom-logo {
+    max-height: 120px;
+    width: auto;
+}
+
+.contact-quick-links {
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+    position: absolute; /* Pulls buttons out of the alignment flow */
+    right: 5%; /* Aligns buttons to the right edge */
+}
+
+.quick-link-btn {
+    width: 45px;
+    height: 45px;
+    background-color: var(--primary-orange);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.2rem;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.quick-link-btn:hover {
+    transform: scale(1.1);
+    background-color: #d6581d; /* Slightly darker orange on hover */
+}
+        
         /* --- Header & Navigation --- */
         header {
             display: flex;
@@ -91,7 +136,7 @@
         /* --- Logo & Title Section --- */
         .branding-section {
             text-align: center;
-            padding: 4rem 1rem;
+            padding: 1rem 1rem;
             background: #fff;
         }
 
@@ -387,10 +432,23 @@
     </style>
 </head>
 <body>
-    <!-- Branding & Logo -->
-    <section class="branding-section">
+    
+<!-- Branding & Logo Section -->
+<section class="branding-section">
+    <div class="logo-container">
         <img src="images/logo.png" alt="Nathan Holmes Web Design Logo" class="custom-logo">
-    </section>
+        
+        <!-- Quick Contact Buttons -->
+        <div class="contact-quick-links">
+            <a href="tel:07939233017" class="quick-link-btn" title="Call Me">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+            <a href="mailto:info@nhwebdesign.co.uk" class="quick-link-btn" title="Email Me">
+                <i class="fa-solid fa-envelope"></i>
+            </a>
+        </div>
+    </div>
+</section>
 
     <!-- Hero Section -->
     <section class="hero">
@@ -427,9 +485,9 @@
         <p>As a trusted adviser I work with multiple partners to make software design that is usable, enjoyable and memorable. I prioritise a research-based approach to ensure each design is appropriately targeted to each client's larger brand strategy.</p>
         
         <p class="orange-text">Please, feel free to get in touch and contact me, I'm sure that I can help you out.</p>
-        
+
         <a href="#contact" class="btn-outline">Contact me...</a>
-    </section>
+</section>
 
     <!-- Hosting Features Section -->
     <section class="hosting-features">
@@ -452,118 +510,106 @@
     <!-- Pricing Section -->
     <section id="pricing" class="pricing">
         <div class="pricing-grid">
-            <!-- Beginner -->
+            <!-- Starter -->
             <div class="pricing-card">
                 <i class="fa-regular fa-circle-xmark"></i>
-                <h3>Beginner Package</h3>
+                <h3>Starter</h3>
                 <span class="highlight">What is included?</span>
                 <ul>
                     <li>Bespoke Website Design</li>
-                    <li>Custom Domain Name</li>
-                    <li>1x Custom Email</li>
+                    <li>Bespoke Logo Design</li>
                     <li>Complete & Reliable Hosting</li>
                     <li>Up to <strong>3</strong> Pages</li>
-                    <li>Search Engine Optimisation (SEO)</li>
+                    <li>Basic SEO Foundation</li>
                     <li>Responsive Mobile Site</li>
                     <li>Social Media Buttons</li>
-                    <li>Contact Form</li>
+                    <li>Assistance with Domain/Email Setup</li>
+                    <li>Basic Contact Form</li>
                     <li>Favicon</li>
-                    <li><br>Optional Support</li>
-                    <li>Reliable Hosting</li>
-                    <li>No Ads</li>
                 </ul>
                 <span class="target">Aimed at individuals</span>
-                <div class="price">£300 + Support</div>
+                <div class="price">£500</div>
             </div>
 
-            <!-- Intermediate -->
+            <!-- Growth -->
             <div class="pricing-card">
                 <i class="fa-regular fa-circle-xmark"></i>
-                <h3>Intermediate Package</h3>
+                <h3>Growth</h3>
                 <span class="highlight">What is included?</span>
                 <ul>
-                    <li>Graphic Design</li>
                     <li>Bespoke Website Design</li>
-                    <li>Custom Domain Name</li>
-                    <li>1x Custom Email</li>
+                    <li>Bespoke Logo Design</li>
                     <li>Complete & Reliable Hosting</li>
                     <li>Up to <strong>10</strong> Pages</li>
-                    <li>Search Engine Optimisation (SEO)</li>
-                    <li>Content Management System (CMS)</li>
+                    <li>Advanced SEO Foundation</li>
                     <li>Responsive Mobile Site</li>
                     <li>Social Media Buttons</li>
-                    <li>Social Media Pages</li>
-                    <li>Contact Form</li>
+                    <li>Assistance with Domain/Email Setup</li>
+                    <li>Custom Contact Form</li>
                     <li>Favicon</li>
-                    <li>Wide range of custom apps</li>
-                    <li><br>Optional Support</li>
-                    <li>Reliable Hosting</li>
-                    <li>No Ads</li>
+                    <li>Google Analytics</li>
                 </ul>
                 <span class="target">Aimed at small businesses</span>
-                <div class="price">£600 + Support</div>
+                <div class="price">£900</div>
             </div>
 
-            <!-- Advanced -->
+            <!-- Scale -->
             <div class="pricing-card">
                 <i class="fa-regular fa-circle-xmark"></i>
-                <h3>Advanced Package</h3>
+                <h3>Scale</h3>
                 <span class="highlight">What is included?</span>
                 <ul>
-                    <li>Branding</li>
-                    <li>Graphic Design</li>
                     <li>Bespoke Website Design</li>
-                    <li>Custom Domain Name</li>
-                    <li>1x Custom Email</li>
+                    <li>Bespoke Logo Design</li>
                     <li>Complete & Reliable Hosting</li>
                     <li><strong>Unlimited</strong> Pages</li>
-                    <li>Customised Logo</li>
-                    <li>Search Engine Optimisation (SEO)</li>
-                    <li>Content Management System (CMS)</li>
+                    <li>Comprehensive SEO Foundation</li>
                     <li>Responsive Mobile Site</li>
                     <li>Social Media Buttons</li>
-                    <li>Social Media Pages</li>
-                    <li>Contact Form</li>
+                    <li>Assistance with Domain/Email Setup</li>
+                    <li>Complex Contact Form</li>
                     <li>Favicon</li>
-                    <li>Wide range of custom apps</li>
-                    <li>Google Analytics</li>
-                    <li><br>Optional Support</li>
-                    <li>Reliable Hosting</li>
-                    <li>No Ads</li>
+                    <li>GA4 + Custom Event Tracking</li>
                 </ul>
                 <span class="target">Aimed at medium / large businesses</span>
-                <div class="price">£1200 + Support</div>
+                <div class="price">£1500+</div>
             </div>
         </div>
 
-        <!-- Support Packages -->
-        <div class="support-pricing">
-            <div class="support-tier">
-                <h4>Basic Support:</h4>
-                <p>A support that covers the hosting of the domain and website. This also covers quick changes and amendments made to the website.</p>
-                <div class="price">£20 Monthly</div>
-            </div>
-            
-            <div class="support-tier">
-                <h4>Premium Support:</h4>
-                <p>24/7 website support that covers hosting of the domain and website. This also covers unlimited changes, amendments, and new designs.</p>
-                <div class="price">£80 Monthly</div>
-            </div>
+                <!-- Support Packages -->
 
-            <p class="custom-note">* All Packages can be customised, contact me and we can arrange a bespoke package that suits your needs.<br><br>*All packages come with 1 month Premium Support</p>
-            
-            <a href="#contact" class="btn-outline" style="background: var(--bg-darker-gray); border-color: var(--bg-darker-gray); margin-top: 1rem;">Contact</a>
+            <div class="support-tier">
+                <h4>Monthly Care Package:</h4>
+                <br>
+<p><strong>Managed Hosting:</strong> Continuous maintenance of your Cloudflare Pages deployment to ensure the site stays online.</p> 
+<p><strong>Security Monitoring:</strong> Regular security checks and SSL certificate management to ensure the site remains protected.</p>  
+<p><strong>Automated Backups:</strong> Routine off-site backups of your site's code and assets to prevent data loss.</p>  
+<p><strong>Performance Optimization:</strong> Ongoing monitoring of site speed to ensure the best possible experience for visitors.</p> 
+<p><strong>Updates:</strong> Managing SSL certificate renewals and minor technical patches.</p> 
+<p><strong>Small Content Edits:</strong> An allowance of 1 hour per month for minor text or image updates (e.g., changing a phone number, updating testimonials, or swapping a hero image).</p> 
+<p><strong>Priority Support:</strong> Guaranteed response within 48 hours for any technical queries or support needs.</p> 
+                                <br>
+                <div class="price">£40 p/m</div>
         </div>
+        
+<section id="contact-form" style="padding: 5rem 5%; background: #f9f9f9; text-align: center;">
+    <!-- Changed color to black (default is black, added explicit color: black for clarity) -->
+    <h2 style="margin-bottom: 2rem; color: black;">Get In Touch</h2>
+    
+    <!-- Changed max-width to 100% to stretch the form -->
+    <form action="https://formspree.io/f/xnjydkzd" method="POST" style="max-width: 100%; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+        <input type="text" name="name" placeholder="Your Name" required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;">
+        <input type="email" name="email" placeholder="Your Email" required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;">
+        <textarea name="message" placeholder="How can I help you?" rows="5" required style="padding: 12px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+        <button type="submit" style="padding: 12px; background: var(--primary-orange); color: white; border: none; border-radius: 4px; cursor: pointer; font-size: 1rem;">Send Message</button>
+    </form>
     </section>
 
     <!-- Footer -->
     <footer id="contact">
         <p>info@nhwebdesign.co.uk</p>
         <p>07939233017</p>
-        <div class="socials" style="margin: 1.5rem 0;">
-            <a href="#"><i class="fa-brands fa-linkedin"></i></a>
-        </div>
-        <p>©2026 - Website created by Nathan Holmes</p>
+        <p>©2026 - All Rights Reserved</p>
     </footer>
 </body>
 </html>
