@@ -546,7 +546,7 @@
             </div>
 
             <div data-aos="fade-up" class="bg-brand-white p-8 md:p-10 rounded-2xl shadow-sm border border-gray-100">
-                <form action="https://formspree.io/f/mojobwdl" method="POST" class="space-y-6">
+                <form id="contact-form" action="https://formspree.io/f/mojobwdl" method="POST" class="space-y-6">
                     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                         <div>
                             <label for="name" class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
@@ -570,10 +570,19 @@
                         <div class="cf-turnstile" data-sitekey="0x4AAAAAADiq7e1sVO3KchP5" data-theme="light"></div>
                     </div>
 
-                    <button type="submit" class="w-full bg-brand-orange text-white font-bold py-4 rounded-lg hover:bg-orange-600 transition-colors shadow-lg">
+                    <button id="submit-btn" type="submit" class="w-full bg-brand-orange text-white font-bold py-4 rounded-lg hover:bg-orange-600 transition-colors shadow-lg">
                         Send Message
                     </button>
                 </form>
+
+                <!-- Success message (hidden until form submitted) -->
+                <div id="form-success" class="hidden text-center py-8">
+                    <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg class="w-8 h-8 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                    </div>
+                    <h3 class="text-xl font-bold text-brand-dark mb-2">Message Sent!</h3>
+                    <p class="text-gray-500">Thanks for getting in touch. I'll get back to you as soon as possible.</p>
+                </div>
             </div>
         </div>
     </section>
@@ -660,6 +669,36 @@
             gtag('js', new Date());
             gtag('config', 'G-EPTC9PNJLQ');
         }
+
+        // Contact Form — AJAX submission
+        var contactForm = document.getElementById('contact-form');
+        var submitBtn = document.getElementById('submit-btn');
+        var formSuccess = document.getElementById('form-success');
+
+        contactForm.addEventListener('submit', function (e) {
+            e.preventDefault();
+            submitBtn.disabled = true;
+            submitBtn.textContent = 'Sending...';
+
+            fetch(contactForm.action, {
+                method: 'POST',
+                body: new FormData(contactForm),
+                headers: { 'Accept': 'application/json' }
+            }).then(function (res) {
+                if (res.ok) {
+                    contactForm.classList.add('hidden');
+                    formSuccess.classList.remove('hidden');
+                } else {
+                    submitBtn.disabled = false;
+                    submitBtn.textContent = 'Send Message';
+                    alert('Something went wrong. Please try again or email info@nhwebdesign.co.uk directly.');
+                }
+            }).catch(function () {
+                submitBtn.disabled = false;
+                submitBtn.textContent = 'Send Message';
+                alert('Something went wrong. Please try again or email info@nhwebdesign.co.uk directly.');
+            });
+        });
 
         // Cookie Consent Logic
         var cookieBanner = document.getElementById('cookie-banner');
