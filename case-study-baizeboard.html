@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BaizeBoard Case Study | NH Web Design</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <meta name="description" content="How NH Web Design built BaizeBoard — a bespoke real-time snooker scoreboard web application. Custom web app case study by Nathan Holmes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#f26522',
+                            dark: '#2d3748',
+                            light: '#f7fafc',
+                            white: '#ffffff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-white border-b border-gray-100 py-5 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="images/logo.png" alt="NH Web Design Logo" class="h-12 w-auto object-contain">
+            </a>
+            <a href="index.html#portfolio" class="inline-flex items-center gap-2 text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-brand-dark pt-20 pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(0deg, #f26522 0px, #f26522 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #f26522 0px, #f26522 1px, transparent 1px, transparent 40px);"></div>
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <div data-aos="fade-up">
+                <span class="inline-block bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Web Application</span>
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">BaizeBoard</h1>
+                <p class="text-gray-300 text-xl max-w-2xl leading-relaxed">A bespoke real-time digital scoreboard built from scratch for snooker players and clubs — no templates, no off-the-shelf software.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project meta -->
+    <section class="bg-brand-white border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
+                <div class="py-8 px-6">
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Client</p>
+                    <p class="font-semibold text-brand-dark">BaizeBoard</p>
+                </div>
+                <div class="py-8 px-6">
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Type</p>
+                    <p class="font-semibold text-brand-dark">Web Application</p>
+                </div>
+                <div class="py-8 px-6">
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Services</p>
+                    <p class="font-semibold text-brand-dark">Design &amp; Development</p>
+                </div>
+                <div class="py-8 px-6">
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Live at</p>
+                    <a href="https://baizeboard.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-orange hover:text-orange-600 transition-colors">baizeboard.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="max-w-5xl mx-auto px-4 py-20">
+
+        <!-- Screenshot -->
+        <div data-aos="fade-up" class="mb-20 rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+            <div class="bg-gray-200 px-4 py-3 flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                <div class="flex-1 bg-white rounded-full px-4 py-1 text-xs text-gray-400 ml-2">baizeboard.com</div>
+            </div>
+            <img src="images/baizeboard.png" alt="BaizeBoard application screenshot" class="w-full object-cover object-top" style="max-height:480px;">
+        </div>
+
+        <!-- Brief & Solution -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+
+            <div data-aos="fade-right">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+                    The Brief
+                </h2>
+                <div class="space-y-4 text-gray-600 leading-relaxed">
+                    <p>Snooker clubs and players had no dedicated digital scoring tool built specifically for the sport. Existing options were either generic, unreliable, or required expensive dedicated hardware.</p>
+                    <p>The client needed a web-based solution — something that could run on any device without installation, handle real match logic, and be robust enough for competitive play where accuracy is non-negotiable.</p>
+                    <p>The key constraints were: it had to work offline, update in real time across multiple screens, and feel purpose-built rather than a generic adaptation.</p>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+                    What I Built
+                </h2>
+                <ul class="space-y-4">
+                    <li class="flex items-start gap-3 text-gray-600">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Full match setup — player names, frame count, and match configuration before play begins</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Real-time scoring with live sync between the main scoreboard and a companion watch screen</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Installable as a Progressive Web App (PWA) — works fully offline once installed</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Connection monitoring with automatic heartbeat so disconnections are caught within 15 seconds</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Match save and resume — in-progress matches survive app restarts without data loss</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Fully responsive — designed for tablet use at the table and desktop display on a large screen</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div data-aos="fade-up" class="bg-brand-dark rounded-3xl p-10 md:p-14 mb-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange opacity-5 rounded-full -translate-y-1/3 translate-x-1/3"></div>
+            <div class="relative z-10 max-w-2xl">
+                <p class="text-brand-orange font-bold uppercase tracking-widest text-xs mb-6">The Result</p>
+                <h2 class="text-3xl font-bold text-white mb-6 leading-snug">A purpose-built scoring tool that snooker players actually use.</h2>
+                <p class="text-gray-300 leading-relaxed mb-8">BaizeBoard launched as a fully functional web application — no downloads, no hardware, no subscriptions. It runs on any device with a browser, installs as a PWA, and handles everything from a casual frame between friends to a structured club match. The companion watch screen means a second device can display the score live without any additional setup.</p>
+                <a href="https://baizeboard.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-orange text-white px-7 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all shadow-lg">
+                    Visit baizeboard.com
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- CTA -->
+        <div data-aos="fade-up" class="text-center">
+            <p class="text-gray-500 mb-3">Have a project in mind?</p>
+            <h3 class="text-2xl font-bold mb-8">Let's build something together.</h3>
+            <div class="flex flex-col sm:flex-row justify-center gap-4">
+                <a href="index.html#contact" class="bg-brand-orange text-white px-8 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all shadow-lg">Get in Touch</a>
+                <a href="index.html#portfolio" class="bg-brand-white text-brand-dark border border-gray-200 px-8 py-3 rounded-full font-semibold hover:border-brand-orange hover:text-brand-orange transition-all">View More Work</a>
+            </div>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-white text-gray-700 py-8 border-t border-gray-200 mt-10">
+        <div class="max-w-5xl mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4 text-sm text-gray-500">
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> NH Web Design. All rights reserved.</p>
+            <div class="flex gap-6">
+                <a href="privacy.html" class="hover:text-brand-orange transition-colors">Privacy Policy</a>
+                <a href="terms.html" class="hover:text-brand-orange transition-colors">Terms &amp; Conditions</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true, offset: 80 });
+    </script>
+</body>
+</html>
