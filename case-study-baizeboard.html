@@ -6,7 +6,7 @@
     <title>BaizeBoard Case Study | NH Web Design</title>
     <link rel="icon" type="image/png" href="images/favicon.png">
     <link rel="apple-touch-icon" href="images/favicon.png">
-    <meta name="description" content="How NH Web Design built BaizeBoard — a bespoke real-time snooker scoreboard web application. Custom web app case study by Nathan Holmes.">
+    <meta name="description" content="How NH Web Design built BaizeBoard — a bespoke real-time snooker scoreboard web application with Android app, watch companion, and player stats. Case study by Nathan Holmes.">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -46,9 +46,13 @@
         <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(0deg, #f26522 0px, #f26522 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #f26522 0px, #f26522 1px, transparent 1px, transparent 40px);"></div>
         <div class="max-w-5xl mx-auto px-4 relative z-10">
             <div data-aos="fade-up">
-                <span class="inline-block bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest mb-6">Web Application</span>
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="inline-block bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Web Application</span>
+                    <span class="inline-block bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Android App</span>
+                    <span class="inline-block bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Watch Companion</span>
+                </div>
                 <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">BaizeBoard</h1>
-                <p class="text-gray-300 text-xl max-w-2xl leading-relaxed">A bespoke real-time digital scoreboard built from scratch for snooker players and clubs — no templates, no off-the-shelf software.</p>
+                <p class="text-gray-300 text-xl max-w-2xl leading-relaxed">A full ecosystem for snooker scoring — web app, Android app, live watch companion, and player stats — built entirely from scratch.</p>
             </div>
         </div>
     </section>
@@ -63,7 +67,7 @@
                 </div>
                 <div class="py-8 px-6">
                     <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Type</p>
-                    <p class="font-semibold text-brand-dark">Web Application</p>
+                    <p class="font-semibold text-brand-dark">Web App + Android</p>
                 </div>
                 <div class="py-8 px-6">
                     <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Services</p>
@@ -79,15 +83,55 @@
 
     <main class="max-w-5xl mx-auto px-4 py-20">
 
-        <!-- Screenshot -->
+        <!-- Live interactive preview -->
         <div data-aos="fade-up" class="mb-20 rounded-2xl overflow-hidden shadow-xl border border-gray-200">
-            <div class="bg-gray-200 px-4 py-3 flex items-center gap-2">
+            <!-- Browser chrome -->
+            <div class="bg-gray-200 px-4 py-2.5 flex items-center gap-2">
                 <span class="w-3 h-3 rounded-full bg-red-400"></span>
                 <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
                 <span class="w-3 h-3 rounded-full bg-green-400"></span>
-                <div class="flex-1 bg-white rounded-full px-4 py-1 text-xs text-gray-400 ml-2">baizeboard.com</div>
+                <div class="flex-1 bg-white rounded-full px-4 py-1 text-xs text-gray-400 ml-2 flex items-center gap-2 min-w-0">
+                    <span class="w-2 h-2 rounded-full bg-green-400 flex-shrink-0"></span>
+                    <span class="truncate">baizeboard.com</span>
+                </div>
+                <button id="bb-reload" title="Reload" class="ml-1 flex-shrink-0 text-gray-500 hover:text-gray-800 transition-colors p-1 rounded">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                </button>
             </div>
-            <img src="images/baizeboard.png" alt="BaizeBoard application screenshot" class="w-full object-cover object-top" style="max-height:480px;">
+
+            <!-- iFrame -->
+            <div class="relative" style="height:560px;">
+                <iframe
+                    id="bb-frame"
+                    src="https://baizeboard.com"
+                    class="w-full h-full"
+                    style="border:none; display:block;"
+                    title="BaizeBoard live application"
+                    loading="lazy"
+                    sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals">
+                </iframe>
+
+                <!-- Fallback shown if iframe is blocked -->
+                <div id="bb-fallback" class="hidden absolute inset-0">
+                    <img src="images/baizeboard.png" alt="BaizeBoard screenshot" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-brand-dark/80 flex flex-col items-center justify-center gap-4">
+                        <p class="text-white font-semibold">Interactive preview blocked by browser security.</p>
+                        <a href="https://baizeboard.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-orange text-white px-6 py-2.5 rounded-full font-semibold hover:bg-orange-600 transition-all text-sm">
+                            Open baizeboard.com
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bottom bar -->
+            <div class="bg-gray-100 px-5 py-2.5 flex items-center justify-between text-xs text-gray-400">
+                <span>Live preview — navigate the app directly above</span>
+                <a href="https://baizeboard.com" target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:text-orange-600 transition-colors font-medium flex items-center gap-1">
+                    Open in new tab
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
         </div>
 
         <!-- Brief & Solution -->
@@ -100,8 +144,8 @@
                 </h2>
                 <div class="space-y-4 text-gray-600 leading-relaxed">
                     <p>Snooker clubs and players had no dedicated digital scoring tool built specifically for the sport. Existing options were either generic, unreliable, or required expensive dedicated hardware.</p>
-                    <p>The client needed a web-based solution — something that could run on any device without installation, handle real match logic, and be robust enough for competitive play where accuracy is non-negotiable.</p>
-                    <p>The key constraints were: it had to work offline, update in real time across multiple screens, and feel purpose-built rather than a generic adaptation.</p>
+                    <p>The client needed a full ecosystem — a web app that any device could run without installation, a native Android app for players who wanted it on their phone, a watch screen for referees and spectators, and a login system so players could track their performance over time.</p>
+                    <p>The key constraints were reliability during competitive play, real-time sync across multiple devices, and everything working offline when internet access at a club was unreliable.</p>
                 </div>
             </div>
 
@@ -110,42 +154,54 @@
                     <span class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
                     What I Built
                 </h2>
-                <ul class="space-y-4">
-                    <li class="flex items-start gap-3 text-gray-600">
+                <ul class="space-y-3.5">
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
                         <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                         </span>
                         <span>Full match setup — player names, frame count, and match configuration before play begins</span>
                     </li>
-                    <li class="flex items-start gap-3 text-gray-600">
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
                         <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                         </span>
-                        <span>Real-time scoring with live sync between the main scoreboard and a companion watch screen</span>
+                        <span>Real-time scoring with live sync across all connected devices simultaneously</span>
                     </li>
-                    <li class="flex items-start gap-3 text-gray-600">
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
                         <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                         </span>
-                        <span>Installable as a Progressive Web App (PWA) — works fully offline once installed</span>
+                        <span><strong class="text-brand-dark">Watch companion app</strong> — a dedicated screen for spectators and referees to follow the score live on any second device without setup</span>
                     </li>
-                    <li class="flex items-start gap-3 text-gray-600">
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
                         <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                         </span>
-                        <span>Connection monitoring with automatic heartbeat so disconnections are caught within 15 seconds</span>
+                        <span><strong class="text-brand-dark">Native Android app</strong> — a purpose-built Android application available on the Google Play Store, with full offline support and a dedicated mobile experience</span>
                     </li>
-                    <li class="flex items-start gap-3 text-gray-600">
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong class="text-brand-dark">Player login &amp; accounts</strong> — secure authentication so players have their own profile across sessions and devices</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong class="text-brand-dark">Stats &amp; game history</strong> — match results, frame scores, and performance data logged per player so progress can be tracked over time</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span>Installable as a PWA — works fully offline once installed, with automatic reconnection and connection health monitoring</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
                         <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
                             <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
                         </span>
                         <span>Match save and resume — in-progress matches survive app restarts without data loss</span>
-                    </li>
-                    <li class="flex items-start gap-3 text-gray-600">
-                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
-                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
-                        </span>
-                        <span>Fully responsive — designed for tablet use at the table and desktop display on a large screen</span>
                     </li>
                 </ul>
             </div>
@@ -156,8 +212,8 @@
             <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange opacity-5 rounded-full -translate-y-1/3 translate-x-1/3"></div>
             <div class="relative z-10 max-w-2xl">
                 <p class="text-brand-orange font-bold uppercase tracking-widest text-xs mb-6">The Result</p>
-                <h2 class="text-3xl font-bold text-white mb-6 leading-snug">A purpose-built scoring tool that snooker players actually use.</h2>
-                <p class="text-gray-300 leading-relaxed mb-8">BaizeBoard launched as a fully functional web application — no downloads, no hardware, no subscriptions. It runs on any device with a browser, installs as a PWA, and handles everything from a casual frame between friends to a structured club match. The companion watch screen means a second device can display the score live without any additional setup.</p>
+                <h2 class="text-3xl font-bold text-white mb-6 leading-snug">A complete snooker scoring ecosystem — web, Android, and beyond.</h2>
+                <p class="text-gray-300 leading-relaxed mb-8">BaizeBoard launched as a fully functional multi-platform ecosystem. The web app runs on any browser with no download required, the Android app brings it natively to mobile, and the watch companion lets referees and spectators follow the action on a second device in real time. Player accounts tie it all together — match history and stats persist across every platform, so players always have a record of their game.</p>
                 <a href="https://baizeboard.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-orange text-white px-7 py-3 rounded-full font-semibold hover:bg-orange-600 transition-all shadow-lg">
                     Visit baizeboard.com
                     <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
@@ -191,6 +247,41 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
         AOS.init({ duration: 800, once: true, offset: 80 });
+
+        // Reload button
+        document.getElementById('bb-reload').addEventListener('click', function () {
+            var frame = document.getElementById('bb-frame');
+            frame.src = frame.src;
+        });
+
+        // If the iframe fails to load (X-Frame-Options / CSP), show the fallback
+        var frame = document.getElementById('bb-frame');
+        var fallback = document.getElementById('bb-fallback');
+        var loaded = false;
+
+        frame.addEventListener('load', function () {
+            loaded = true;
+            // Cross-origin check: if the iframe loaded an error/blocked page,
+            // the contentDocument will be inaccessible but we can check the frame height
+            try {
+                var h = frame.contentWindow.document.body;
+                // If we get here with no content, it may be a blocked blank page
+                if (!h || h.innerHTML === '') {
+                    fallback.classList.remove('hidden');
+                    frame.style.display = 'none';
+                }
+            } catch (e) {
+                // Cross-origin and loaded OK — this is the expected happy path
+            }
+        });
+
+        // After 8 seconds, if not loaded at all, show fallback
+        setTimeout(function () {
+            if (!loaded) {
+                fallback.classList.remove('hidden');
+                frame.style.display = 'none';
+            }
+        }, 8000);
     </script>
 </body>
 </html>
