@@ -446,111 +446,131 @@
                 <p data-aos="fade-up" data-aos-delay="100" class="text-gray-500 mt-6 max-w-xl mx-auto">Real projects built for real clients. Click any card to read the full case study.</p>
             </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Carousel -->
+            <div class="relative" data-aos="fade-up">
+                <!-- Prev button -->
+                <button id="portfolio-prev" aria-label="Previous" class="absolute left-0 top-1/2 -translate-y-1/2 -translate-x-5 w-10 h-10 rounded-full bg-brand-white shadow-lg border border-gray-200 flex items-center justify-center text-brand-dark hover:text-brand-orange hover:border-brand-orange transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                </button>
+                <!-- Next button -->
+                <button id="portfolio-next" aria-label="Next" class="absolute right-0 top-1/2 -translate-y-1/2 translate-x-5 w-10 h-10 rounded-full bg-brand-white shadow-lg border border-gray-200 flex items-center justify-center text-brand-dark hover:text-brand-orange hover:border-brand-orange transition-colors z-10 disabled:opacity-30 disabled:cursor-not-allowed">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                </button>
 
-                <!-- BaizeBoard -->
-                <a href="case-study-baizeboard.html" data-aos="fade-up" data-aos-delay="0" class="group flex flex-col bg-brand-light rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400 transform hover:-translate-y-2">
-                    <!-- Browser chrome -->
-                    <div class="flex-shrink-0 bg-gray-200 px-4 py-2.5 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-                        <div class="flex-1 bg-white rounded-full px-3 py-0.5 text-xs text-gray-400 ml-1 truncate">baizeboard.com</div>
-                    </div>
-                    <!-- Screenshot with hover overlay -->
-                    <div class="relative overflow-hidden" style="height:210px;">
-                        <img src="images/baizeboard.png" alt="BaizeBoard" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-brand-dark/75 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-sm font-semibold tracking-wide">Visit Site</span>
-                            <span class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <!-- Card body -->
-                    <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block text-xs font-bold text-brand-orange bg-orange-50 px-2.5 py-1 rounded-full mb-3 self-start">Web App</span>
-                        <h3 class="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">BaizeBoard</h3>
-                        <p class="text-gray-500 text-sm flex-1">A highly functional, custom digital scoreboard application.</p>
-                        <p class="text-brand-orange text-sm font-semibold mt-4 flex items-center gap-1">Read Case Study <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
-                    </div>
-                </a>
+                <!-- Track wrapper -->
+                <div class="overflow-hidden">
+                    <div id="portfolio-track" class="flex" style="gap:2rem; transition: transform 0.5s cubic-bezier(0.4,0,0.2,1);">
 
-                <!-- Preston Autocare -->
-                <a href="case-study-preston-autocare.html" data-aos="fade-up" data-aos-delay="100" class="group flex flex-col bg-brand-light rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400 transform hover:-translate-y-2">
-                    <div class="flex-shrink-0 bg-gray-200 px-4 py-2.5 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-                        <div class="flex-1 bg-white rounded-full px-3 py-0.5 text-xs text-gray-400 ml-1 truncate">prestonautocare.co.uk</div>
-                    </div>
-                    <div class="relative overflow-hidden" style="height:210px;">
-                        <img src="images/preston-auto.jpg" alt="Preston Autocare Ltd" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-brand-dark/75 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-sm font-semibold tracking-wide">Visit Site</span>
-                            <span class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block text-xs font-bold text-brand-orange bg-orange-50 px-2.5 py-1 rounded-full mb-3 self-start">Website</span>
-                        <h3 class="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">Preston Autocare Ltd</h3>
-                        <p class="text-gray-500 text-sm flex-1">A professional, high-performance landing page for a local garage.</p>
-                        <p class="text-brand-orange text-sm font-semibold mt-4 flex items-center gap-1">Read Case Study <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
-                    </div>
-                </a>
+                        <!-- BaizeBoard -->
+                        <a href="case-study-baizeboard.html" class="portfolio-card group flex flex-col bg-brand-light rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400 transform hover:-translate-y-2 flex-shrink-0">
+                            <div class="flex-shrink-0 bg-gray-200 px-4 py-2.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                                <div class="flex-1 bg-white rounded-full px-3 py-0.5 text-xs text-gray-400 ml-1 truncate">baizeboard.com</div>
+                            </div>
+                            <div class="relative overflow-hidden" style="height:210px;">
+                                <img src="images/baizeboard.png" alt="BaizeBoard" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-brand-dark/75 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-semibold tracking-wide">Read Case Study</span>
+                                    <span class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <span class="inline-block text-xs font-bold text-brand-orange bg-orange-50 px-2.5 py-1 rounded-full mb-3 self-start">Web App</span>
+                                <h3 class="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">BaizeBoard</h3>
+                                <p class="text-gray-500 text-sm flex-1">A highly functional, custom digital scoreboard application.</p>
+                                <p class="text-brand-orange text-sm font-semibold mt-4 flex items-center gap-1">Read Case Study <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
+                            </div>
+                        </a>
 
-                <!-- Ralphie Studios -->
-                <a href="case-study-ralphie-studios.html" data-aos="fade-up" data-aos-delay="100" class="group flex flex-col bg-brand-light rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400 transform hover:-translate-y-2">
-                    <div class="flex-shrink-0 bg-gray-200 px-4 py-2.5 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-                        <div class="flex-1 bg-white rounded-full px-3 py-0.5 text-xs text-gray-400 ml-1 truncate">ralphiestudios.com</div>
-                    </div>
-                    <div class="relative overflow-hidden" style="height:210px;">
-                        <img src="images/ralpiestudios.png" alt="Ralphie Studios" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-brand-dark/75 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-sm font-semibold tracking-wide">Read Case Study</span>
-                            <span class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block text-xs font-bold text-brand-orange bg-orange-50 px-2.5 py-1 rounded-full mb-3 self-start">Games Studio</span>
-                        <h3 class="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">Ralphie Studios</h3>
-                        <p class="text-gray-500 text-sm flex-1">Showcase website for an independent studio building games, apps and digital experiences with a passion for sport.</p>
-                        <p class="text-brand-orange text-sm font-semibold mt-4 flex items-center gap-1">Read Case Study <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
-                    </div>
-                </a>
+                        <!-- Preston Autocare -->
+                        <a href="case-study-preston-autocare.html" class="portfolio-card group flex flex-col bg-brand-light rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400 transform hover:-translate-y-2 flex-shrink-0">
+                            <div class="flex-shrink-0 bg-gray-200 px-4 py-2.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                                <div class="flex-1 bg-white rounded-full px-3 py-0.5 text-xs text-gray-400 ml-1 truncate">prestonautocare.co.uk</div>
+                            </div>
+                            <div class="relative overflow-hidden" style="height:210px;">
+                                <img src="images/preston-auto.jpg" alt="Preston Autocare Ltd" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-brand-dark/75 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-semibold tracking-wide">Read Case Study</span>
+                                    <span class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <span class="inline-block text-xs font-bold text-brand-orange bg-orange-50 px-2.5 py-1 rounded-full mb-3 self-start">Website</span>
+                                <h3 class="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">Preston Autocare Ltd</h3>
+                                <p class="text-gray-500 text-sm flex-1">A professional, high-performance landing page for a local garage.</p>
+                                <p class="text-brand-orange text-sm font-semibold mt-4 flex items-center gap-1">Read Case Study <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
+                            </div>
+                        </a>
 
-                <!-- Off Streets On Sports -->
-                <a href="case-study-off-streets-on-sports.html" data-aos="fade-up" data-aos-delay="200" class="group flex flex-col bg-brand-light rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400 transform hover:-translate-y-2">
-                    <div class="flex-shrink-0 bg-gray-200 px-4 py-2.5 flex items-center gap-2">
-                        <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
-                        <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
-                        <div class="flex-1 bg-white rounded-full px-3 py-0.5 text-xs text-gray-400 ml-1 truncate">offstreetsonsports.com</div>
-                    </div>
-                    <div class="relative overflow-hidden" style="height:210px;">
-                        <img src="images/off-streets-on-sports.png" alt="Off Streets On Sports" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
-                        <div class="absolute inset-0 bg-brand-dark/75 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                            <span class="text-white text-sm font-semibold tracking-wide">Visit Site</span>
-                            <span class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
-                                <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
-                            </span>
-                        </div>
-                    </div>
-                    <div class="p-6 flex flex-col flex-1">
-                        <span class="inline-block text-xs font-bold text-brand-orange bg-orange-50 px-2.5 py-1 rounded-full mb-3 self-start">Website</span>
-                        <h3 class="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">Off Streets On Sports</h3>
-                        <p class="text-gray-500 text-sm flex-1">A bespoke sportswear kit builder for custom team and club apparel.</p>
-                        <p class="text-brand-orange text-sm font-semibold mt-4 flex items-center gap-1">Read Case Study <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
-                    </div>
-                </a>
+                        <!-- Ralphie Studios -->
+                        <a href="case-study-ralphie-studios.html" class="portfolio-card group flex flex-col bg-brand-light rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400 transform hover:-translate-y-2 flex-shrink-0">
+                            <div class="flex-shrink-0 bg-gray-200 px-4 py-2.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                                <div class="flex-1 bg-white rounded-full px-3 py-0.5 text-xs text-gray-400 ml-1 truncate">ralphiestudios.com</div>
+                            </div>
+                            <div class="relative overflow-hidden" style="height:210px;">
+                                <img src="images/ralpiestudios.png" alt="Ralphie Studios" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-brand-dark/75 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-semibold tracking-wide">Read Case Study</span>
+                                    <span class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <span class="inline-block text-xs font-bold text-brand-orange bg-orange-50 px-2.5 py-1 rounded-full mb-3 self-start">Games Studio</span>
+                                <h3 class="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">Ralphie Studios</h3>
+                                <p class="text-gray-500 text-sm flex-1">Showcase website for an independent studio building games, apps and digital experiences with a passion for sport.</p>
+                                <p class="text-brand-orange text-sm font-semibold mt-4 flex items-center gap-1">Read Case Study <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
+                            </div>
+                        </a>
 
+                        <!-- Off Streets On Sports -->
+                        <a href="case-study-off-streets-on-sports.html" class="portfolio-card group flex flex-col bg-brand-light rounded-2xl overflow-hidden shadow-md hover:shadow-2xl transition-all duration-400 transform hover:-translate-y-2 flex-shrink-0">
+                            <div class="flex-shrink-0 bg-gray-200 px-4 py-2.5 flex items-center gap-2">
+                                <span class="w-2.5 h-2.5 rounded-full bg-red-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-yellow-400"></span>
+                                <span class="w-2.5 h-2.5 rounded-full bg-green-400"></span>
+                                <div class="flex-1 bg-white rounded-full px-3 py-0.5 text-xs text-gray-400 ml-1 truncate">offstreetsonsports.com</div>
+                            </div>
+                            <div class="relative overflow-hidden" style="height:210px;">
+                                <img src="images/off-streets-on-sports.png" alt="Off Streets On Sports" loading="lazy" class="w-full h-full object-cover object-top transition-transform duration-500 group-hover:scale-105">
+                                <div class="absolute inset-0 bg-brand-dark/75 flex flex-col items-center justify-center gap-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                    <span class="text-white text-sm font-semibold tracking-wide">Read Case Study</span>
+                                    <span class="w-10 h-10 rounded-full border-2 border-white flex items-center justify-center">
+                                        <svg class="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="p-6 flex flex-col flex-1">
+                                <span class="inline-block text-xs font-bold text-brand-orange bg-orange-50 px-2.5 py-1 rounded-full mb-3 self-start">Website</span>
+                                <h3 class="text-lg font-bold mb-2 group-hover:text-brand-orange transition-colors">Off Streets On Sports</h3>
+                                <p class="text-gray-500 text-sm flex-1">A bespoke sportswear kit builder for custom team and club apparel.</p>
+                                <p class="text-brand-orange text-sm font-semibold mt-4 flex items-center gap-1">Read Case Study <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/></svg></p>
+                            </div>
+                        </a>
+
+                    </div>
+                </div>
+
+                <!-- Dots -->
+                <div class="flex justify-center gap-2 mt-8" id="portfolio-dots">
+                    <button class="portfolio-dot w-2.5 h-2.5 rounded-full transition-colors bg-brand-orange" data-dot="0" aria-label="Go to slide 1"></button>
+                    <button class="portfolio-dot w-2.5 h-2.5 rounded-full transition-colors bg-gray-300" data-dot="1" aria-label="Go to slide 2"></button>
+                    <button class="portfolio-dot w-2.5 h-2.5 rounded-full transition-colors bg-gray-300" data-dot="2" aria-label="Go to slide 3"></button>
+                    <button class="portfolio-dot w-2.5 h-2.5 rounded-full transition-colors bg-gray-300" data-dot="3" aria-label="Go to slide 4"></button>
+                </div>
             </div>
         </div>
     </section>
@@ -803,6 +823,57 @@
 
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script>
+        // Portfolio carousel
+        (function () {
+            var track = document.getElementById('portfolio-track');
+            var cards = Array.from(document.querySelectorAll('.portfolio-card'));
+            var dots = Array.from(document.querySelectorAll('.portfolio-dot'));
+            var prevBtn = document.getElementById('portfolio-prev');
+            var nextBtn = document.getElementById('portfolio-next');
+            var current = 0;
+            var GAP = 32;
+
+            function visibleCount() {
+                if (window.innerWidth >= 1024) return 3;
+                if (window.innerWidth >= 640) return 2;
+                return 1;
+            }
+
+            function maxIndex() {
+                return Math.max(0, cards.length - visibleCount());
+            }
+
+            function setWidths() {
+                var v = visibleCount();
+                var containerW = track.parentElement.offsetWidth;
+                var cardW = (containerW - (v - 1) * GAP) / v;
+                cards.forEach(function (c) { c.style.width = cardW + 'px'; });
+            }
+
+            function goTo(index) {
+                current = Math.max(0, Math.min(index, maxIndex()));
+                var cardW = cards[0].offsetWidth;
+                track.style.transform = 'translateX(-' + (current * (cardW + GAP)) + 'px)';
+                prevBtn.disabled = current === 0;
+                nextBtn.disabled = current >= maxIndex();
+                dots.forEach(function (d, i) {
+                    d.classList.toggle('bg-brand-orange', i === current);
+                    d.classList.toggle('bg-gray-300', i !== current);
+                });
+            }
+
+            prevBtn.addEventListener('click', function () { goTo(current - 1); });
+            nextBtn.addEventListener('click', function () { goTo(current + 1); });
+            dots.forEach(function (d) {
+                d.addEventListener('click', function () { goTo(+d.dataset.dot); });
+            });
+
+            window.addEventListener('resize', function () { setWidths(); goTo(current); });
+
+            setWidths();
+            goTo(0);
+        })();
+
         // Initialize Scroll Animations
         AOS.init({
             duration: 800,
