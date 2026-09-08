@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ralphie Studios Case Study | NH Web Design</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+    <meta name="description" content="How NH Web Design built the showcase website for Ralphie Studios — an independent games and apps studio with a passion for sport. Case study by Nathan Holmes.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#f26522',
+                            dark: '#2d3748',
+                            light: '#f7fafc',
+                            white: '#ffffff'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body class="bg-brand-light text-brand-dark font-sans antialiased">
+
+    <!-- Header -->
+    <header class="bg-brand-white border-b border-gray-100 py-5 sticky top-0 z-40 shadow-sm">
+        <div class="max-w-5xl mx-auto px-4 flex justify-between items-center">
+            <a href="index.html" class="flex items-center">
+                <img src="images/logo.png" alt="NH Web Design Logo" class="h-12 w-auto object-contain">
+            </a>
+            <a href="index.html#portfolio" class="inline-flex items-center gap-2 text-sm font-medium text-brand-dark hover:text-brand-orange transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Back to Portfolio
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="bg-brand-dark pt-20 pb-24 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-5" style="background-image: repeating-linear-gradient(0deg, #f26522 0px, #f26522 1px, transparent 1px, transparent 40px), repeating-linear-gradient(90deg, #f26522 0px, #f26522 1px, transparent 1px, transparent 40px);"></div>
+        <div class="max-w-5xl mx-auto px-4 relative z-10">
+            <div data-aos="fade-up">
+                <div class="flex flex-wrap gap-2 mb-6">
+                    <span class="inline-block bg-brand-orange text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Website Design</span>
+                    <span class="inline-block bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Games Studio</span>
+                    <span class="inline-block bg-white/10 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-widest">Personal Project</span>
+                </div>
+                <h1 class="text-5xl md:text-6xl font-bold text-white mb-6 leading-tight">Ralphie Studios</h1>
+                <p class="text-gray-300 text-xl max-w-2xl leading-relaxed">A showcase website for an independent development studio creating games, apps and digital experiences — built to present live projects and those in development with the confidence they deserve.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project meta -->
+    <section class="bg-brand-white border-b border-gray-100">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 divide-x divide-gray-100">
+                <div class="py-8 px-6">
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Client</p>
+                    <p class="font-semibold text-brand-dark">Ralphie Studios</p>
+                </div>
+                <div class="py-8 px-6">
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Type</p>
+                    <p class="font-semibold text-brand-dark">Studio Showcase</p>
+                </div>
+                <div class="py-8 px-6">
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Services</p>
+                    <p class="font-semibold text-brand-dark">Design &amp; Development</p>
+                </div>
+                <div class="py-8 px-6">
+                    <p class="text-xs font-bold text-brand-orange uppercase tracking-widest mb-2">Live at</p>
+                    <a href="https://ralphiestudios.com" target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-orange hover:text-orange-600 transition-colors">ralphiestudios.com</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main content -->
+    <main class="max-w-5xl mx-auto px-4 py-20">
+
+        <!-- Live preview -->
+        <div data-aos="fade-up" class="mb-20 rounded-2xl overflow-hidden shadow-xl border border-gray-200">
+            <div class="bg-gray-200 px-5 py-3 flex items-center gap-2">
+                <span class="w-3 h-3 rounded-full bg-red-400"></span>
+                <span class="w-3 h-3 rounded-full bg-yellow-400"></span>
+                <span class="w-3 h-3 rounded-full bg-green-400"></span>
+                <div class="flex-1 bg-white rounded-full px-4 py-1 text-xs text-gray-400 ml-2 truncate">ralphiestudios.com</div>
+                <button id="rs-reload" title="Reload preview" class="text-gray-400 hover:text-brand-orange transition-colors ml-2">
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/></svg>
+                </button>
+            </div>
+            <div class="relative" style="height: 520px;">
+                <iframe id="rs-frame" src="https://ralphiestudios.com" class="w-full h-full" style="border:none; display:block;" title="Ralphie Studios live website" loading="lazy" sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals"></iframe>
+                <div id="rs-fallback" class="hidden absolute inset-0">
+                    <img src="images/ralpiestudios.png" alt="Ralphie Studios website screenshot" class="w-full h-full object-cover object-top">
+                    <div class="absolute inset-0 bg-brand-dark/80 flex flex-col items-center justify-center gap-4">
+                        <p class="text-white font-semibold">Interactive preview blocked by browser security.</p>
+                        <a href="https://ralphiestudios.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-orange text-white px-6 py-2.5 rounded-full font-semibold hover:bg-orange-600 transition-all text-sm">
+                            Open ralphiestudios.com
+                            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="bg-gray-100 px-5 py-2.5 flex items-center justify-between text-xs text-gray-400">
+                <span>Live preview — navigate the site directly above</span>
+                <a href="https://ralphiestudios.com" target="_blank" rel="noopener noreferrer" class="text-brand-orange hover:text-orange-600 transition-colors font-medium flex items-center gap-1">
+                    Open in new tab
+                    <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Brief & Solution -->
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-20">
+
+            <div data-aos="fade-right">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center text-sm font-bold flex-shrink-0">1</span>
+                    The Brief
+                </h2>
+                <div class="space-y-4 text-gray-600 leading-relaxed">
+                    <p>Ralphie Studios is an independent development studio creating games, apps and digital experiences with a particular passion for sport. The studio needed a home online — somewhere that could present finished projects alongside those in active development, and do it in a way that matched the quality of the work being built.</p>
+                    <p>The site needed to feel bold and purposeful — not a generic portfolio template, but something that felt like it belonged to a studio that builds from scratch and sweats the details. The kind of place someone lands and immediately understands what Ralphie Studios is about.</p>
+                    <p>As a personal project, I had full creative control — which made it an opportunity to push the design further than a standard client brief would allow.</p>
+                </div>
+            </div>
+
+            <div data-aos="fade-left">
+                <h2 class="text-2xl font-bold mb-6 flex items-center gap-3">
+                    <span class="w-8 h-8 rounded-full bg-brand-orange text-white flex items-center justify-center text-sm font-bold flex-shrink-0">2</span>
+                    What I Built
+                </h2>
+                <ul class="space-y-3.5">
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong class="text-brand-dark">Bespoke studio website</strong> — designed and built from scratch to reflect the identity of an independent studio that cares about craft</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong class="text-brand-dark">Project showcase</strong> — live and in-development projects presented clearly, with enough detail to generate genuine interest</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong class="text-brand-dark">Wheelchair Rugby League game feature</strong> — prominent placement for the studio's flagship in-development title, the first WRL video game built in Unreal Engine 5</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong class="text-brand-dark">BaizeBoard integration</strong> — showcases the studio's released snooker scoreboard app, with links to the live web app and Google Play Store listing</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong class="text-brand-dark">Fully responsive</strong> — works cleanly across mobile, tablet and desktop without compromise</span>
+                    </li>
+                    <li class="flex items-start gap-3 text-gray-600 text-sm">
+                        <span class="w-5 h-5 rounded-full bg-orange-50 border border-brand-orange flex items-center justify-center flex-shrink-0 mt-0.5">
+                            <svg class="w-3 h-3 text-brand-orange" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M5 13l4 4L19 7"/></svg>
+                        </span>
+                        <span><strong class="text-brand-dark">Hosted on Cloudflare</strong> — fast global load times, enterprise-grade security, and managed deployment via GitHub</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Result -->
+        <div data-aos="fade-up" class="bg-brand-dark rounded-3xl p-10 md:p-14 mb-20 relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-brand-orange opacity-5 rounded-full -translate-y-1/3 translate-x-1/3"></div>
+            <div class="relative z-10 max-w-2xl">
+                <p class="text-brand-orange font-bold uppercase tracking-widest text-xs mb-6">The Result</p>
+                <h2 class="text-3xl font-bold text-white mb-6 leading-snug">A studio home that does justice to the work inside it.</h2>
+                <p class="text-gray-300 leading-relaxed mb-8">Ralphie Studios now has an online presence that matches its ambition — presenting both released and in-development projects with the detail and confidence they deserve. The site acts as a hub for the studio's output, from BaizeBoard already live on Android and Web, to the Wheelchair Rugby League game currently in development in Unreal Engine 5. As a personal project it also gave me the freedom to push my own design further — and the result is something I'm genuinely proud to have in my own portfolio.</p>
+                <a href="https://ralphiestudios.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 bg-brand-orange text-white px-8 py-3.5 rounded-full font-semibold hover:bg-orange-600 transition-all shadow-lg">
+                    Visit Ralphie Studios
+                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+                </a>
+            </div>
+        </div>
+
+        <!-- Back to portfolio -->
+        <div data-aos="fade-up" class="text-center">
+            <a href="index.html#portfolio" class="inline-flex items-center gap-2 text-brand-dark font-semibold hover:text-brand-orange transition-colors">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"/></svg>
+                Back to Portfolio
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-brand-dark text-gray-400 py-10 mt-10">
+        <div class="max-w-5xl mx-auto px-4 text-center text-sm">
+            <p>&copy; 2025 NH Web Design. All rights reserved.</p>
+            <p class="mt-1"><a href="index.html" class="hover:text-brand-orange transition-colors">nhwebdesign.co.uk</a></p>
+        </div>
+    </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
+
+        // iframe fallback
+        var frame = document.getElementById('rs-frame');
+        var fallback = document.getElementById('rs-fallback');
+        var timer = setTimeout(function() {
+            try {
+                var doc = frame.contentDocument || frame.contentWindow.document;
+                if (!doc || doc.body === null || doc.body.innerHTML === '') {
+                    fallback.classList.remove('hidden');
+                }
+            } catch(e) {
+                fallback.classList.remove('hidden');
+            }
+        }, 8000);
+
+        frame.addEventListener('load', function() {
+            clearTimeout(timer);
+            try {
+                var doc = frame.contentDocument || frame.contentWindow.document;
+                if (!doc || doc.body === null || doc.body.innerHTML === '') {
+                    fallback.classList.remove('hidden');
+                }
+            } catch(e) {
+                fallback.classList.remove('hidden');
+            }
+        });
+
+        document.getElementById('rs-reload').addEventListener('click', function() {
+            fallback.classList.add('hidden');
+            frame.src = frame.src;
+        });
+    </script>
+</body>
+</html>
