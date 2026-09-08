@@ -214,35 +214,27 @@
     <script>
         AOS.init({ once: true, duration: 700, easing: 'ease-out-cubic' });
 
-        // iframe fallback
+        // iframe fallback — only show if iframe hasn't loaded within 8s
         var frame = document.getElementById('rs-frame');
         var fallback = document.getElementById('rs-fallback');
+        var loaded = false;
+
         var timer = setTimeout(function() {
-            try {
-                var doc = frame.contentDocument || frame.contentWindow.document;
-                if (!doc || doc.body === null || doc.body.innerHTML === '') {
-                    fallback.classList.remove('hidden');
-                }
-            } catch(e) {
-                fallback.classList.remove('hidden');
-            }
+            if (!loaded) { fallback.classList.remove('hidden'); }
         }, 8000);
 
         frame.addEventListener('load', function() {
+            loaded = true;
             clearTimeout(timer);
-            try {
-                var doc = frame.contentDocument || frame.contentWindow.document;
-                if (!doc || doc.body === null || doc.body.innerHTML === '') {
-                    fallback.classList.remove('hidden');
-                }
-            } catch(e) {
-                fallback.classList.remove('hidden');
-            }
         });
 
         document.getElementById('rs-reload').addEventListener('click', function() {
+            loaded = false;
             fallback.classList.add('hidden');
             frame.src = frame.src;
+            timer = setTimeout(function() {
+                if (!loaded) { fallback.classList.remove('hidden'); }
+            }, 8000);
         });
     </script>
 </body>

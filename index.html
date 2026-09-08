@@ -852,11 +852,9 @@
 
             function goTo(index) {
                 var max = maxIndex();
-                current = Math.max(0, Math.min(index, max));
+                current = ((index % (max + 1)) + (max + 1)) % (max + 1);
                 var cardW = cards[0].offsetWidth;
                 track.style.transform = 'translateX(-' + (current * (cardW + GAP)) + 'px)';
-                prevBtn.disabled = current === 0;
-                nextBtn.disabled = current >= max;
                 dots.forEach(function (d, i) {
                     d.hidden = i > max;
                     d.classList.toggle('bg-brand-orange', i === current);
